@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Profile />
-      <section>{children}</section>
+      <section className="p-2">{children}</section>
     </>
   );
 }

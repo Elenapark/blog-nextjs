@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ProfileImage from '../../public/profile.png';
+import Link from 'next/link';
 
 export default function Profile() {
   return (
@@ -11,9 +12,11 @@ export default function Profile() {
       </h3>
       <h4>Front-end developer</h4>
       <p>컴포트 존을 벗어나는 것을 즐기고, 비즈니스 성장을 우선시합니다.</p>
-      <button className="bg-orange-200 rounded-md p-1 text-sm font-bold">
-        Contact Me
-      </button>
+      <Link href="/contact">
+        <button className="bg-orange-200 rounded-md p-1 text-sm font-bold">
+          Contact Me
+        </button>
+      </Link>
     </section>
   );
 }

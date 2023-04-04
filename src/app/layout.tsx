@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={lato.className}>
       <body>
         <Header />
-        <section>{children}</section>
+        <section className="max-w-7xl mx-auto">{children}</section>
       </body>
     </html>
   );
