@@ -3,6 +3,11 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 
+export const metadata = {
+  title: "Contact | Elena's Blog ✨",
+  description: 'Contact Page',
+};
+
 export default function ContactPage() {
   return (
     <section className="flex flex-col items-center my-6 py-6 gap-2 rounded-lg h-[100vh]">

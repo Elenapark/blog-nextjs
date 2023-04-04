@@ -7,6 +7,12 @@ type Props = {
   };
 };
 
+export async function generateMetadata({ params }: Props) {
+  return {
+    title: `${params.slug} | Elena's Blog ✨`,
+  };
+}
+
 // dynamic route는 기본적으로 SSR
 export default function PostPage({ params }: Props) {
   console.log(params.slug);
