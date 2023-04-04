@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import './globals.css';
 import Link from 'next/link';
 import { Lato } from 'next/font/google';
+import Profile from '@/components/Profile';
 
 const lato = Lato({
   weight: ['300', '400', '700'],
