@@ -2,15 +2,12 @@
 
 import { BlogPost } from '@/service/posts';
 import { useState } from 'react';
-import PostItem from './PostItem';
 import Posts from './Posts';
 
 const CATEGORIES = ['All Posts', 'Front-end', 'Back-end'];
 
 export default function PostHome({ posts }: { posts: BlogPost[] }) {
   const [category, setCategory] = useState('All Posts');
-
-  console.log(category);
 
   return (
     <>

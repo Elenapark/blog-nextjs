@@ -1,5 +1,6 @@
 'use client';
 
+import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -13,7 +14,6 @@ import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
-import { FC } from 'react';
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 

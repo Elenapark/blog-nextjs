@@ -1,7 +1,7 @@
 'use client';
 
 import { BlogPost } from '@/service/posts';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PostItem from './PostItem';
 
 type Props = {
