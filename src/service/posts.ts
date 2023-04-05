@@ -8,6 +8,7 @@ export type BlogPost = {
   description: string;
   date: string;
   type: 'Front-end' | 'Back-end' | 'All Posts' | string;
+  image: string;
 };
 const postDir = path.join(process.cwd(), 'blogposts');
 
@@ -31,6 +32,7 @@ export const getAllPosts = () => {
       description: matterResult.data.description,
       date: matterResult.data.date,
       type: matterResult.data.type,
+      image: matterResult.data.image,
     };
 
     return blogPost;
