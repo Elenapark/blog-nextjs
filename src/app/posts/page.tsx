@@ -1,6 +1,5 @@
-import Posts from '@/components/Posts';
-
-const CATEGORIES = ['All Posts', '프론트엔드', '백엔드'];
+import { getAllPosts } from '@/service/posts';
+import PostHome from '@/components/PostHome';
 
 export const metadata = {
   title: "Posts | Elena's Blog ✨",
@@ -8,20 +7,10 @@ export const metadata = {
 };
 
 export default function PostsPage() {
+  const posts = getAllPosts();
   return (
     <section className="flex p-4 gap-1">
-      <div className="w-1/4">
-        <ul className="sticky top-0">
-          {CATEGORIES.map((item, idx) => (
-            <li key={idx} className="text-md text-neutral-500">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="w-4/5">
-        <Posts />
-      </div>
+      <PostHome posts={posts} />
     </section>
   );
 }

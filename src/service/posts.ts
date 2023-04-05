@@ -5,7 +5,9 @@ import matter from 'gray-matter';
 export type BlogPost = {
   id: string;
   title: string;
+  description: string;
   date: string;
+  type: 'Front-end' | 'Back-end' | 'All Posts' | string;
 };
 const postDir = path.join(process.cwd(), 'blogposts');
 
@@ -25,8 +27,10 @@ export const getAllPosts = () => {
 
     const blogPost: BlogPost = {
       id,
-      title: matterResult?.data.title,
-      date: matterResult?.data.date,
+      title: matterResult.data.title,
+      description: matterResult.data.description,
+      date: matterResult.data.date,
+      type: matterResult.data.type,
     };
 
     return blogPost;
