@@ -1,8 +1,7 @@
 import { getAllPosts, getPost } from '@/service/posts';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
+
 import getFormattedDate from '@/utils/getFormattedDate';
+import Markdown from '@/components/Markdown';
 
 type Props = {
   params: {
@@ -24,17 +23,13 @@ export default function PostPage({ params }: Props) {
   return (
     <section className="p-2">
       <div className="flex justify-between items-center border-b p-2 my-2">
-        <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="text-sm text-neutral-600">{getFormattedDate(date)}</p>
+        <h1 className="text-lg md:text-2xl font-bold">{title}</h1>
+        <p className="text-xs md:text-sm text-neutral-600">
+          {getFormattedDate(date)}
+        </p>
       </div>
       {/* markdown */}
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
-        className="p-2"
-      >
-        {post.contents}
-      </ReactMarkdown>
+      <Markdown markdown={post.contents} className="p-2" />
     </section>
   );
 }
