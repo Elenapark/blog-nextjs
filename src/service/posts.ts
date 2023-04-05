@@ -22,7 +22,6 @@ export const getAllPosts = () => {
 
     // post metadata를 가져오기 위한 gray-matter
     const matterResult = matter(fileContents);
-    console.log(matterResult.data);
 
     const blogPost: BlogPost = {
       id,
@@ -32,4 +31,19 @@ export const getAllPosts = () => {
 
     return blogPost;
   });
+};
+
+export const getPost = (id: string) => {
+  const filePath = path.join(postDir, `${id}.md`);
+  const fileContents = fs.readFileSync(filePath, 'utf-8');
+
+  const matterResult = matter(fileContents);
+  const contents = matterResult.content;
+
+  const postDetail = {
+    metadata: matterResult.data,
+    contents,
+  };
+
+  return postDetail;
 };
