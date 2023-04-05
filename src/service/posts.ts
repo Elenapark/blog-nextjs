@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-type BlogPost = {
+export type BlogPost = {
   id: string;
   title: string;
   date: string;
@@ -22,11 +22,12 @@ export const getAllPosts = () => {
 
     // post metadata를 가져오기 위한 gray-matter
     const matterResult = matter(fileContents);
+    console.log(matterResult.data);
 
     const blogPost: BlogPost = {
       id,
-      title: matterResult.data.title,
-      date: matterResult.data.date,
+      title: matterResult?.data.title,
+      date: matterResult?.data.date,
     };
 
     return blogPost;

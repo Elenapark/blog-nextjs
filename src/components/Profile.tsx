@@ -5,14 +5,17 @@ import Button from './Button';
 
 export default function Profile() {
   return (
-    <section className="flex flex-col items-center py-8 gap-2 ">
+    <section className="flex flex-col items-center py-8 px-2 gap-2">
       <Image src={ProfileImage} alt="Avatar" width={250} />
-      <h3 className="text-2xl font-bold">
+      <h3 className="text-xl md:text-2xl font-bold">
         안녕하세요, 개발자 <span className="text-orange-500">박성은</span>
         입니다.
       </h3>
       <h4>Front-end developer</h4>
-      <p>컴포트 존을 벗어나는 것을 즐기고, 비즈니스 성장을 우선시합니다.</p>
+      <p className="text-center text-sm">
+        컴포트 존을 벗어나는 것을 즐깁니다.
+        <br /> 비즈니스 성장을 우선시합니다.
+      </p>
       <Link href="/contact">
         <Button
           title="Contact Me"
